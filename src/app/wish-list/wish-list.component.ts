@@ -17,8 +17,5 @@ export class WishListComponent {
   // Need the @Input() decorator to remove the error in <wish-list [wishes]="visibleItems"></wish-list>. Import it first!
   @Input() wishes: WishItem[] = [];
 
-  toggleItem(item: WishItem) : void {
-    item.isComplete = !item.isComplete;
-    console.log(item);
-  }
+  
 }

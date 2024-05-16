@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { WishItem } from '../shared/models/wishItem';
 
-const filters = [
-  (item : WishItem) => item,
-  (item : WishItem) => !item.isComplete,
-  (item : WishItem) => item.isComplete
-]
-
 // decorator
 @Component({
   selector: 'app-root',
@@ -19,24 +13,19 @@ export class AppComponent {
     new WishItem('Get Coffee', true),
     new WishItem('Find grass that cuts itself'),
   ];
-
-  listFilter : any = '0';
-  newWishText = "";
+  
   renderIfNoItems = 'There are no wishes to display';
-  title = 'mywishlist';
 
-  // getter
-  get visibleItems() : WishItem[] {
-    return this.items.filter(filters[this.listFilter]);
-  }
+  filter: any = () => {}; // IMPORTANT: I JUST USED THIS TO REMOVE THE ERROR THAT I'M ENCOUNTERING WHEN USING ONLY 'filter: any;'
+  // filter: any; // IMPORTANT: THIS IS USED IN THE YOUTUBE TUTORIAL, BUT THE CONSOLE IN THE ANGULAR APP PRODUCES ERROR, ALTHOUGH THE APP IS STILL FULLY FUNCTIONAL
+  
+  // // getter
+  // get visibleItems() : WishItem[] {
+  //   return this.items.filter(this.filter);
+  // }
 
   // visibleItems: WishItem[] = this.items; // copy of items array, but this will contain the filtered items // This was also commented out because of the getter
   
-  addNewWish() {
-    this.items.push(new WishItem(this.newWishText)); // todo: add wish to items array
-    this.newWishText = ""; // clear the textbox
-  }
-
   // THIS WAS COMMENTED OUT TO USE getter 'get' visibleItems() above
   // filterChanged(value: any) {
   //   console.log(value);
