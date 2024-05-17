@@ -5,22 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { WishModule } from './wish/wish.module';
-// import { WishListComponent } from './wish/wish-list/wish-list.component';
-// import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
-// import { WishFilterComponent } from './wish/wish-filter/wish-filter.component';
-// import { WishListItemComponent } from './wish/wish-list-item/wish-list-item.component';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // WishListComponent,
-    // AddWishFormComponent,
-    // WishFilterComponent,
-    // WishListItemComponent
   ],
   imports: [
     BrowserModule,
     WishModule,
+    ContactModule,
     AppRoutingModule
   ],
   providers: [],
