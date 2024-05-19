@@ -17,4 +17,8 @@ export class ProductsService {
   getAllProducts() {
     return of(this.data); // of: this is going to return an observable 'of' our 'data'
   }
+
+  getProduct(id: number) {
+    return of(this.data.find(p => p.id === id));
+  }
 }
